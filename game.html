@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екологічна Вікторина</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <header>
+        <h1>Екологічна вікторина</h1>
+    </header>
+    <main>
+        <div class="leaf left-leaf"></div>
+        <div class="leaf right-leaf"></div>
+        <div class="leaf left-leaf"></div>
+        <div class="leaf right-leaf"></div>
+        <div class="leaf left-leaf"></div>
+        <section id="quiz-container">
+            <div id="question-container">
+                <p id="question">Ваше питання тут</p>
+            </div>
+            <div id="answers">
+                <button class="answer-btn" onclick="checkAnswer(0)">Варіант 1</button>
+                <button class="answer-btn" onclick="checkAnswer(1)">Варіант 2</button>
+                <button class="answer-btn" onclick="checkAnswer(2)">Варіант 3</button>
+                <button class="answer-btn" onclick="checkAnswer(3)">Варіант 4</button>
+            </div>
+            <div id="result"></div>
+        </section>
+        <button id="next-question" onclick="nextQuestion()">Наступне питання</button>
+    </main>
+
+    <script src="game.js"></script>
+</body>
+</html>

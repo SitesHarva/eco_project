@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css"></link>
+    <title>Погода</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Перевірка Погоди</h1>
+        <section>
+            <label for="cityInput">Введіть назву міста:</label>
+            <input id="cityInput" class="inputApi" type="text" placeholder="Наприклад, Київ">
+            <button class="weatherButton">Отримати Погоду</button>
+            
+            <div class="results">
+                <div class="resultApi">Температура: <span class="temp"></span> °C</div>
+                <div class="resultApi2">Швидкість вітру: <span class="wind"></span> м/с</div>
+                <div class="resultApi3">Вологість: <span class="humidity"></span> %</div>
+            </div>
+            
+            <div class="errorApi"></div>
+        </section>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>

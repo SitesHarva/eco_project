@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #2e7d32;
+    overflow: hidden;
+    position: relative;
+    font-size: 18px;
+}
+
+header {
+    background-color: rgba(56, 142, 60, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+header:hover {
+    background-color: rgba(56, 142, 60, 1);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+#quiz-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#quiz-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.2);
+}
+
+#question-container {
+    margin-bottom: 20px;
+}
+
+#question {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #388e3c;
+    text-align: center;
+    animation: fadeIn 0.5s forwards;
+}
+
+#answers {
+    max-height: 300px; /* Максимальна висота для прокручування */
+    overflow-y: auto; /* Вертикальне прокручування, якщо потрібно */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Додати рамку */
+    border-radius: 8px; /* Заокруглені краї */
+    background-color: #f9f9f9; /* Світлий фон */
+}
+
+.answer-btn {
+    background-color: #4caf50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.answer-btn:hover {
+    background-color: #66bb6a;
+    transform: translateY(-3px);
+}
+
+.answer-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.answer-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.3s;
+}
+
+.answer-btn:hover:before {
+    transform: translateX(-50%) scale(1);
+}
+
+#result {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f1f8e9;
+    border: 1px solid #c8e6c9;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+#next-question {
+    background-color: #388e3c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#next-question:hover {
+    background-color: #2e7d32;
+    transform: translateY(-3px);
+}
+
+#next-question:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Анімації для елементів природи */
+@keyframes leafAnimation {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-30px); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('leaf.png') no-repeat center center / cover;
+    animation: leafAnimation 6s infinite ease-in-out;
+    pointer-events: none; /* щоб не заважати клікам */
+}
+
+.left-leaf {
+    left: -10%; /* Зліва */
+    animation-duration: 4s;
+}
+
+.right-leaf {
+    right: -10%; /* Справа */
+    animation-duration: 5s;
+}
+
+.left-leaf:nth-child(odd) {
+    animation-duration: 5s;
+}
+
+.right-leaf:nth-child(odd) {
+    animation-duration: 6s;
+}
+
+/* Адаптивний дизайн */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #quiz-container {
+        padding: 30px;
+    }
+
+    #question {
+        font-size: 1.5rem;
+    }
+
+    .answer-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    #next-question {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #quiz-container {
+        padding: 20px;
+    }
+
+    #question {
+        font-size: 1.3rem;
+    }
+
+    .answer-btn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    #next-question {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Додаткові стилі для елементів */
+button {
+    outline: none;
+}
+
+#question-container,
+#answers {
+    animation: slideIn 0.5s forwards;
+}
+
+#result {
+    background-color: #f0f4c3;
+    border: 2px solid #c5e1a5;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+#result.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Листя з анімацією */
+@keyframes leafFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+.leaf {
+    animation: leafFloat 4s infinite alternate ease-in-out;
+}
+
+.left-leaf {
+    animation-duration: 5s;
+    animation-delay: 0.5s;
+}
+
+.right-leaf {
+    animation-duration: 4.5s;
+    animation-delay: 0.2s;
+}
+
+/* Загальні стилі для кнопок */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 150, 136, 0.5);
+}
+
+.answer-btn:focus,
+#next-question:focus {
+    border: 2px solid #80cbc4;
+}
+
+/* Додаткові анімації */
+/* @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+} */
+
+.answer-btn {
+    animation: bounce 1s infinite;
+}
+
+/* Загальні стилі для активних станів */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Додаткові стилі для фону */
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

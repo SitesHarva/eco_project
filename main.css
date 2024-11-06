@@ -1,0 +1,444 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+header:hover {
+    background-color: #45a049;
+}
+
+/* Section Styles */
+section {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Questions Styles */
+.questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questions h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.questions .quiz {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.questionButton {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+}
+
+.questionButton:hover {
+    background-color: #007B9E;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result {
+    margin-top: 20px;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Quiz Styles */
+.quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.answerButton {
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid #4CAF50;
+    background-color: #a5d6a7;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.answerButton:hover {
+    background-color: #81c784;
+    transform: scale(1.05);
+}
+
+/* Favourite Tips Styles */
+.favouriteTipDiv {
+    background-color: #4CAF50;
+    display: none;
+}
+
+header button {
+    background-color: white;
+    color: #4caf50;
+    border: 2px solid #4caf50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Main Content Styles */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addTipForm {
+    margin-bottom: 20px;
+}
+
+.newTipText {
+    width: 100%;
+    max-width: 600px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.saveTipButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.saveTipButton:hover {
+    background-color: #388e3c;
+}
+
+/* Tip Div Styles */
+.tipDiv, .favouriteTipDiv {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.divElement {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.divElement:hover {
+    transform: scale(1.02);
+}
+
+.divElement p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.divElement button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.divElement button:hover {
+    background-color: #388e3c;
+}
+
+.tipDiv.hidden, .favouriteTipDiv.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Tooltip Styles */
+.questions-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.startTestButton {
+    margin-right: 110px; /* Відстань між кнопкою та іконкою запитання */
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip.hidden {
+    display: none;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Відстань від іконки до тексту */
+    left: 50%;
+    margin-left: -100px; /* Центрування тексту */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.question-mark {
+    font-size: 1.2em; /* Розмір іконки запитання */
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .questions, .quiz {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .tooltip .tooltiptext {
+        width: 150px;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+/* Slider Styles */
+.slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Щоб слайдер був на фоні */
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+.slider img:hover {
+    filter: brightness(90%);
+  }
+
+  .notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Забезпечує, що вікно буде поверх інших елементів */
+    width: 300px; /* Фіксована ширина */
+    max-height: none; /* Дозволити необмежену висоту */
+    overflow: auto; /* Дозволити прокрутку при перевищенні висоти */
+}
+#okButton {
+    background-color: #4CAF50; /* Зелений фон */
+    color: white; /* Білий текст */
+    border: none; /* Без бордеру */
+    border-radius: 5px; /* Закруглені кути кнопки */
+    padding: 10px 15px; /* Внутрішні відступи кнопки */
+    cursor: pointer; /* Курсор у вигляді вказівника */
+    transition: background-color 0.3s ease; /* Анімація фону при наведенні */
+}
+.notification h4 {
+    margin: 0 0 8px;
+    font-size: 18px; /* Збільшено розмір шрифту */
+    color: #2c3e50; /* Темно-синій колір */
+    font-weight: bold; /* Жирний текст */
+}
+
+.hidden {
+    display: none;
+}

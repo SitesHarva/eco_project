@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header>
+  <h1 id="loginTitle">Login</h1>
+</header>
+<section>
+  <form id="loginForm">
+    <h3 id="registrationTitle">Реєстрація</h3>
+    <input id="loginInput" placeholder="login" type="text" class="input1" required>
+    <input id="passwordInput" placeholder="password" type="password" class="input2" required>
+    <button id="submitButton" class="sentButton" disabled>Увійти</button>
+    <div id="eror" class="error-message"></div>
+  </form>
+</section>
+
+<section>
+  <div class="questions">
+    <div class="questions-box">
+      <button id="startTestButton" class="startTestButton">Почати екологічний тест</button>
+      <span class="tooltip">
+        <span class="question-mark">?</span>
+        <span id="tooltipText" class="tooltiptext">Потрібно пройти тест перед реєстрацією.</span>
+      </span>
+    </div>
+    <h3 class="question"></h3>
+    <div class="quiz"></div>
+    <div id="testPassedMessage" class="result">Тест виконано, можете увійти</div>
+  </div>
+</section>
+
+<div class="slider">
+  <img src="image1.jpg" class="active" alt="Image 1">
+  <img src="image2.jpg" alt="Image 2">
+  <img src="image3.jpg" alt="Image 3">
+  <img src="image4.jpg" alt="Image 4">
+  <img src="image5.jpg" alt="Image 5">
+  <img src="image6.jpg" alt="Image 6">
+  <img src="image7.jpg" alt="Image 7">
+  <img src="image8.jpg" alt="Image 8">
+  <img src="image9.jpg" alt="Image 9">
+  <img src="image10.jpg" alt="Image 10">
+  <img src="image11.jpg" alt="Image 11">
+  <img src="image12.jpg" alt="Image 12">
+</div>
+
+<div id="notification" class="notification hidden">
+  <p id="notificationMessage">Якщо ви уже зареєстровані, то просто швидко прогорніть тест.</p>
+  <button id="okButton">Ок</button>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
